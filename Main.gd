@@ -19,8 +19,11 @@ func new_game():
 	$StartTimer.start()
 	$HUD.update_score(score)
 	$HUD.show_message("Get Ready!")
+	$gameMusic.play()
 
 func game_over():
+	$gameMusic.stop()
+	$deathSound.play()
 	$ScoreTimer.stop()
 	$MobTimer.stop()
 	$HUD.show_game_over()
